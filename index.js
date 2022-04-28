@@ -6,15 +6,21 @@ var server_addr = "192.168.0.104";   // the IP address of your Raspberry PI
 
 function client(){
 
-    const net = require('net');
-    var input = document.getElementById("message").value;
+    document.write("You are learning how to call JavaScript function in html\n");
+    try {
+      const net = require('net');
+      var input = document.getElementById("message").value;
 
-    const client = net.createConnection({ port: server_port, host: server_addr }, () => {
-        // 'connect' listener.
-        console.log('connected to server!');
-        // send the message
-        client.write(`${input}\r\n`);
-    });
+      const client = net.createConnection({ port: server_port, host: server_addr }, () => {
+          // 'connect' listener.
+          console.log('connected to server!');
+          // send the message
+          client.write(`${input}\r\n`);
+      });
+    } catch(e) {
+      document.write(e);
+    }
+
 
     // get the data from the server
     client.on('data', (data) => {
