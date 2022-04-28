@@ -78,8 +78,9 @@ function resetKey(e) {
 
 // update data for every 50ms
 function update_data(){
-    setInterval(function(){
-        // get image from python server
-        client();
-    }, 50);
+    // setInterval(function(){
+    //     // get image from python server
+    //     client();
+    // }, 50);
+    client();
 }
